@@ -1,8 +1,15 @@
-import Home from "./components/pages/Home/Home";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/organisms/Header/Header";
+import MainContainer from "./components/pages/MainContainer/MainContainer";
+
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <Header />
+      <Routes>
+        <Route path="/" element={<MainContainer />} />
+      </Routes>
+      
     </div>
   );
 }
