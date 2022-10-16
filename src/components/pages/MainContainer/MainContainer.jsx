@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import Home from "../Home/Home.jsx";
 import { motion } from "framer-motion";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-// import RowContainer from "./RowContainer";
+import RowContainer from "../../organisms/RowContainer/RowContainer.jsx";
 import { useStateValue } from "../../../context/StateProvider";
-// import MenuContainer from "./MenuContainer";
-// import CartContainer from "./CartContainer";
+import MenuContainer from "../../organisms/MenuContainer/MenuContainer.jsx";
+import CartContainer from "../../organisms/CartContainer/CartContainer.jsx";
 
 const MainContainer = () => {
   const [{ foodItems, cartShow }, dispatch] = useStateValue();
@@ -40,16 +40,16 @@ const MainContainer = () => {
             </motion.div>
           </div>
         </div>
-        {/* <RowContainer
+        <RowContainer
           scrollValue={scrollValue}
           flag={true}
           data={foodItems?.filter((n) => n.category === "fruits")}
-        /> */}
+        />
       </section>
 
-      {/* <MenuContainer /> */}
+      <MenuContainer />
 
-      {/* {cartShow && <CartContainer />} */}
+      {cartShow && <CartContainer />}
     </div>
   );
 };
