@@ -6,6 +6,7 @@ import { useStateValue } from "../../../context/StateProvider";
 import { actionType } from "../../../context/reducer";
 
 const RowContainer = ({ flag, data, scrollValue }) => {
+  
   const rowContainer = useRef();
 
   const [items, setItems] = useState([]);
@@ -19,7 +20,8 @@ const RowContainer = ({ flag, data, scrollValue }) => {
     });
     localStorage.setItem("cartItems", JSON.stringify(items));
   };
-
+  useEffect(() => {
+  }, [data]);
   useEffect(() => {
     rowContainer.current.scrollLeft += scrollValue;
   }, [scrollValue]);
