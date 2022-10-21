@@ -38,6 +38,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
           ? "overflow-x-scroll scrollbar-none"
           : "overflow-x-hidden flex-wrap justify-center"
       }`}
+      id='row'
     >
       {data && data.length > 0 ? (
         data.map((item) => (
